@@ -1,0 +1,38 @@
+@import './styles/bag-colors';
+$header-height: 100px;
+$footer-height: 50px;
+$nav-width: 150px;
+$header-footer-height: $header-height+$footer-height;
+:host {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    header {
+        flex: 1 0 100%;
+        height: $header-height;
+        background-color: darken($bag-green, 0%);
+    }
+    nav {
+        display: block;
+        flex: 0 0 $nav-width;
+        width: $nav-width;
+        height: calc(100vh - #{$header-footer-height});
+        background-color: lighten($bag-green, 15%);
+        a {
+            display: block;
+            margin-top: 1em;
+            margin-left: 1em;
+        }
+    }
+    main {
+        display: block;
+        flex: 1;
+        height: calc(100vh - #{$header-footer-height});
+        background-color: lighten($bag-green, 45%);
+    }
+    footer {
+        flex: 1 0 100%;
+        height: $footer-height;
+        background-color: lighten($bag-green, 30%);
+    }
+}
