@@ -8,7 +8,7 @@ import { Todo } from '../model/todo';
 })
 export class PromiseComponent implements OnInit {
 
-  promise1: Promise<Response>;
+  promise: Promise<Response>;
 
   futureNumber: Promise<number>;
 
@@ -28,12 +28,13 @@ export class PromiseComponent implements OnInit {
   simplePromise() {
     console.log('== simple promise ==');
     const url = 'https://jsonplaceholder.typicode.com/todos/1';
-    this.promise1 = fetch(url);
 
-    this.promise1.then( x => x.json(), error => console.log('error loading data (1)', error ))
+    this.promise = fetch(url);
+
+    this.promise.then( x => x.json(), error => console.log('error loading data (1)', error ))
       .then(y => console.log('simple: ', y), error => console.log('error loading data (2)', error ) )
       .catch( console.error );
-    this.promise1.catch( console.error );
+    this.promise.catch( console.error );
   }
 
   async waitPromise() {
