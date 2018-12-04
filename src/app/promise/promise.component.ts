@@ -67,6 +67,4 @@ export class PromiseComponent implements OnInit {
 
     this.futureNumber = result;
   }
-
-
 }

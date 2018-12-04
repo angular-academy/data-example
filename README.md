@@ -2,11 +2,12 @@
 
 Inhalt: wie gehen wir mit Daten um, die wir erst in der Zukunft erhalten. Welche Sprachkonstrukte und Patterns haben wir dafür?
 
-## Der Plan
+## Themenübersicht
 
 * Callbacks
 * Promises
 * Observables
+* RxJS Links
 
 ## Inhalt
 
@@ -54,7 +55,7 @@ Ein [Promise](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Glo
 
 * *pending*: weder fullfiled noch rejected
 * *fullfiled*: Operation erfolgreich
-* rejected: Operation
+* *rejected*: Operation
 
 Promises sind seit ECMA-Script 6 Bestandteil der Sprache.
 
@@ -74,7 +75,18 @@ Der Rückgabewert ist ein Promise vom Type *Response*. Die *json()* Methode lief
 
 #### Promises erstellen
 
-* todo
+Ein Promise wird durch Aufruf seines Konstruktors erstellt. Als Parameter wir deine *Executor*-Funktion übergeben. Diese wird mit zwei Parametern aufgerufen: einem *resolve*-Callback und einem *error* Callback:
+
+```typescript
+new Promise<number>( (resolve, reject) => {
+    // resolve(someValue) führt zum fulfilled Zustand
+    // reject(badReason) führt zum rejected
+
+    // ...
+}
+```
+
+Im Beispiel wird das Promise verwendet, um per Zufallgsgemerator eine Zufallszahl zu bekommen.
 
 ### Observables
 
@@ -145,3 +157,11 @@ ngOnDestroy() {
 #### Observables erstellen
 
 * todo
+
+
+### RxJS Links
+
+RxJS: https://rxjs-dev.firebaseapp.com/guide/overview
+
+RxJS Marbles: http://rxmarbles.com/
+
